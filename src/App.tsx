@@ -7,18 +7,27 @@ function App() {
     <div className="App">
       This is APP component
         <Rating />
+        <Accordion />
     </div>
   );
+}
+
+function Star() {
+    return <div>
+        star
+    </div>
 }
 
 function Rating() {
     return (
         <div>
-        <div>start</div>
-        <div>start</div>
-        <div>start</div>
-        <div>start</div>
-        <div>start</div>
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+
+
         </div>
     )
 }
