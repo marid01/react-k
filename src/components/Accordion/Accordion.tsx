@@ -3,13 +3,30 @@ import React from "react";
 
 type AccordionPropsType = {
     titleValue: string
+    collapsed?: boolean
 }
 
+// function Accordion1(props: AccordionPropsType) {
+//     if (props.collapsed === true) {
+//         return <div>
+//             <AccordionTitle title={props.titleValue}/>
+//         </div>
+//     } else {
+//         return <div>
+//             <AccordionTitle title={props.titleValue}/>
+//             <AccordionBody/>
+//         </div>
+//     }
+// }
+
+// Условный рендеринг
 function Accordion(props: AccordionPropsType) {
-    return <div>
-        <AccordionTitle title={props.titleValue}/>
-        <AccordionBody/>
-    </div>
+
+        return <div>
+            <AccordionTitle title={props.titleValue}/>
+            {!props.collapsed && <AccordionBody/>}
+        </div>
+
 }
 
 
