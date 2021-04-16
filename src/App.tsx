@@ -3,33 +3,31 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
+import {UncontrolledRating} from "./components/UncontroledRating/UncontrolledRating";
 
 function App() {
     return (
         <div className="App">
-
-          {/*  <Accordion titleValue={"Menu"} collapsed={true}/>
-            <Accordion titleValue={"Users"} collapsed={false} />
-
-            <Rating value = {1} />
-            <Rating value = {2} />
-            <Rating value = {3} />
-            <Rating value = {4} />
-            <Rating value = {5} />*/}
-
             <OnOff/>
-            <OnOff/>
+            <Accordion titleValue={"Menu"}/>
+
+            <UncontrolledRating/>
+
+
+
 
 
         </div>
     );
 }
 
-type PageTitlePropsType = {
+type PageTitlePropsType =
+{
     title: string
 }
 
-function PageTitle(props: PageTitlePropsType) {
+function PageTitle(props: PageTitlePropsType)
+{
     return <h1>
         {props.title}
     </h1>

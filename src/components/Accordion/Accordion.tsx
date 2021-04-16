@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 
 type AccordionPropsType = {
@@ -6,25 +6,12 @@ type AccordionPropsType = {
     collapsed?: boolean
 }
 
-// function Accordion1(props: AccordionPropsType) {
-//     if (props.collapsed === true) {
-//         return <div>
-//             <AccordionTitle title={props.titleValue}/>
-//         </div>
-//     } else {
-//         return <div>
-//             <AccordionTitle title={props.titleValue}/>
-//             <AccordionBody/>
-//         </div>
-//     }
-// }
-
-// Условный рендеринг
 function Accordion(props: AccordionPropsType) {
-
+let [collapsed, setCollapsed]= useState(false);
         return <div>
             <AccordionTitle title={props.titleValue}/>
-            {!props.collapsed && <AccordionBody/>}
+            <button onClick={ () => { setCollapsed(!collapsed)}}>Toogle</button>
+            {!collapsed && <AccordionBody/>}
         </div>
 
 }
